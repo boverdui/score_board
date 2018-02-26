@@ -1,0 +1,72 @@
+<form method="post" action="/matches/<%= @match.id %>">
+
+  <p>
+    <label for="date"> Date: </label>
+    <input id="date" value="<%= @match.date %>" type="date" name="date"/>
+  </p>
+  <p>
+    <label for="venue-select"> Venue: </label>
+    <select id="venue-select" name="venue_id">
+      <% for venue in @venues %>
+        <% if venue.id == @match.venue.id %>
+          <option selected value="<%= venue.id %>"><%= venue.name %></option>
+        <% else %>
+          <option value="<%= venue.id %>"><%= venue.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="home-team-select"> Home team: </label>
+    <select id="home-team-select" name="home_team_id">
+      <% for team in @teams %>
+        <% if team.id == @match.home_team_id %>
+          <option selected value="<%= team.id %>"><%= team.name %></option>
+        <% else %>
+          <option value="<%= team.id %>"><%= team.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="home-team-score"> Home team score: </label>
+    <input id="home-team-score" value="<%= @match.home_team_score %>" type="number" name="home_team_score"/>
+  </p>
+  <p>
+    <label for="away-team-select"> Away team: </label>
+    <select id="away-team-select" name="away_team_id">
+      <% for team in @teams %>
+        <% if team.id == @match.away_team_id %>
+          <option selected value="<%= team.id %>"><%= team.name %></option>
+        <% else %>
+          <option value="<%= team.id %>"><%= team.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="away-team-score"> Away team score: </label>
+    <input id="away-team-score" value="<%= @match.away_team_score %>"type="number" name="away_team_score"/>
+  </p>
+  <p>
+    <label for="competition-select"> Venue: </label>
+    <select id="competition-select" name="competition_id">
+      <% for competition in @competitions %>
+        <% if competition.id == @match.competition.id %>
+          <option selected value="<%= competition.id %>"><%= competition.name %></option>
+        <% else %>
+          <option value="<%= competition.id %>"><%= competition.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="comments"> Comments: </label>
+    <input id="comments" value="<%= @match.comments %>" type="text" name="comments"/>
+  </p>
+
+  <p>
+    <input type="submit" value="Update Match"/>
+  </p>
+
+</form>

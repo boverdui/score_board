@@ -1,0 +1,15 @@
+body {
+  font-style: Arial;
+}
+
+.win {
+  background-color: green;
+}
+
+.loss {
+  background-color: red;
+}
+
+.draw {
+  background-color: yellow;
+}

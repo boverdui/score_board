@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <td><a href="/matches/sort/date">Date</a></td>
+    <td><a href="/matches/sort/venue">Venue</td>
+    <td><a href="/matches/sort/home_team">Home team</td>
+    <td colspan = 2>Score</td>
+    <td><a href="/matches/sort/away_team">Away team</td>
+    <td><a href="/matches/sort/competition">Competition</td>
+  </tr>
+  <% @matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= match.venue.name %></td>
+    <td><%= match.home_team.name %></td>
+    <% if match.winner == "home" %>
+      <td class = "win"><%= match.home_team_score %></td>
+      <td class = "loss"><%= match.away_team_score %></td>
+    <% elsif match.winner == "away" %>
+      <td class = "loss"><%= match.home_team_score %></td>
+      <td class = "win"><%= match.away_team_score %></td>
+    <% else %>
+      <td class = "draw"><%= match.home_team_score %></td>
+      <td class = "draw"><%= match.away_team_score %></td>
+    <% end %>
+    <td><%= match.away_team.name %></td>
+    <td><%= match.competition.name %></td>
+    <td><form method="get" action="/matches/<%= match.id %>"><input type="submit" value="Show details"/></form></td>
+    <td><form method="get" action="/matches/<%= match.id %>/edit"><input type="submit" value="Update"/></form></td>
+    <td><form method="post" action="/matches/<%= match.id %>/delete"><input type="submit" value="Delete"/></form></td>
+  </tr>
+  <% end %>
+</table>

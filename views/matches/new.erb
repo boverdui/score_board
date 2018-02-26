@@ -1,0 +1,54 @@
+
+<form method="post" action="/matches">
+  <p>
+    <label for="date"> Date: </label>
+    <input id="date" type="date" name="date"/>
+  </p>
+  <p>
+    <label for="venue-select"> Venue: </label>
+    <select id="venue-select" name="venue_id">
+      <% for venue in @venues%>
+        <option value="<%= venue.id %>"><%= venue.name() %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="home-team-select"> Home team: </label>
+    <select id="home-team-select" name="home_team_id">
+      <% for team in @teams%>
+        <option value="<%= team.id %>"><%= team.name() %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="home-team-score"> Home team score: </label>
+    <input id="home-team-score" type="number" name="home_team_score"/>
+  </p>
+  <p>
+    <label for="away-team-select"> Away team: </label>
+    <select id="away-team-select" name="away_team_id">
+      <% for team in @teams%>
+        <option value="<%= team.id %>"><%= team.name() %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="away-team-score"> Away team score: </label>
+    <input id="away-team-score" type="number" name="away_team_score"/>
+  </p>
+  <p>
+    <label for="competition-select"> Competition: </label>
+    <select id="competition-select" name="competition_id">
+      <% for competition in @competitions%>
+        <option value="<%= competition.id %>"><%= competition.name() %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <label for="comments"> Comments: </label>
+    <input id="comments" type="text" name="comments"/>
+  </p>
+  <p>
+    <input type="submit" value="Add Match"/>
+  </p>
+</form>

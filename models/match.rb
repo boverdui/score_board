@@ -118,49 +118,49 @@ class Match
     return result.map{|match| Match.new(match)}
   end
 
-  def Match.sort_by(column_name)
+  # def Match.sort_by(column_name)
+  #   sql = "SELECT m.* FROM matches m
+  #   INNER JOIN venues v
+  #   ON m.venue_id = v.id
+  #   ORDER BY #{column_name}.name;"
+  #   result = SqlRunner.run(sql)
+  #   return result.map{|match| Match.new(match)}
+  # end
+
+  def Match.sort_by_venue()
     sql = "SELECT m.* FROM matches m
     INNER JOIN venues v
     ON m.venue_id = v.id
-    ORDER BY #{column_name};"
+    ORDER BY v.name, m.date"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
 
-  # def Match.sort_by_venue()
-  #   sql = "SELECT m.* FROM matches m
-  #   INNER JOIN venues v
-  #   ON m.venue_id = v.id
-  #   ORDER BY v.name"
-  #   result = SqlRunner.run(sql)
-  #   return result.map{|match| Match.new(match)}
-  # end
-  #
-  # def Match.sort_by_home_team()
-  #   sql = "SELECT m.* FROM matches m
-  #   INNER JOIN teams t
-  #   ON m.home_team_id = t.id
-  #   ORDER BY t.name;"
-  #   result = SqlRunner.run(sql)
-  #   return result.map{|match| Match.new(match)}
-  # end
-  #
-  # def Match.sort_by_away_team()
-  #   sql = "SELECT m.* FROM matches m
-  #   INNER JOIN teams t
-  #   ON m.away_team_id = t.id
-  #   ORDER BY t.name;"
-  #   result = SqlRunner.run(sql)
-  #   return result.map{|match| Match.new(match)}
-  # end
-  #
-  # def Match.sort_by_competition()
-  #   sql = "SELECT m.* FROM matches m
-  #   INNER JOIN competitions c
-  #   ON m.competition_id = c.id
-  #   ORDER BY c.name;"
-  #   result = SqlRunner.run(sql)
-  #   return result.map{|match| Match.new(match)}
-  # end
+  def Match.sort_by_home_team()
+    sql = "SELECT m.* FROM matches m
+    INNER JOIN teams t
+    ON m.home_team_id = t.id
+    ORDER BY t.name, m.date;"
+    result = SqlRunner.run(sql)
+    return result.map{|match| Match.new(match)}
+  end
+
+  def Match.sort_by_away_team()
+    sql = "SELECT m.* FROM matches m
+    INNER JOIN teams t
+    ON m.away_team_id = t.id
+    ORDER BY t.name, m.date;"
+    result = SqlRunner.run(sql)
+    return result.map{|match| Match.new(match)}
+  end
+
+  def Match.sort_by_competition()
+    sql = "SELECT m.* FROM matches m
+    INNER JOIN competitions c
+    ON m.competition_id = c.id
+    ORDER BY c.name, m.date;"
+    result = SqlRunner.run(sql)
+    return result.map{|match| Match.new(match)}
+  end
 
 end

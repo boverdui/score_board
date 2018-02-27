@@ -22,9 +22,13 @@ get '/teams/:id/edit' do
 end
 
 post '/teams' do
-  @team = Team.new(params)
-  @team.save()
-  redirect to '/teams'
+  if Team.exists?(params[:name])
+    erb(:"teams/create_error")
+  else
+    @team = Team.new(params)
+    @team.save()
+    redirect to '/teams'
+  end
 end
 
 post '/teams/:id' do

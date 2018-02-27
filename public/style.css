@@ -94,10 +94,14 @@ td {
   width: 15px;
 }
 
-a:link, a:visited, a:hover {
+a {
   color: white;
   text-decoration: none;
 }
+
+/* a:hover {
+  cursor: url('/images/cursor.cur'), auto;
+} */
 
 label, .show_title {
   width: 150px;

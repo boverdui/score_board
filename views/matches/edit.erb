@@ -33,6 +33,10 @@
     <input id="home-team-score" value="<%= @match.home_team_score %>" type="number" name="home_team_score"/>
   </p>
   <p>
+    <label for="away-team-score"> Away team score: </label>
+    <input id="away-team-score" value="<%= @match.away_team_score %>"type="number" name="away_team_score"/>
+  </p>
+  <p>
     <label for="away-team-select"> Away team: </label>
     <select id="away-team-select" name="away_team_id">
       <% for team in @teams %>
@@ -43,10 +47,6 @@
         <% end %>
       <% end %>
     </select>
-  </p>
-  <p>
-    <label for="away-team-score"> Away team score: </label>
-    <input id="away-team-score" value="<%= @match.away_team_score %>"type="number" name="away_team_score"/>
   </p>
   <p>
     <label for="competition-select"> Venue: </label>
@@ -62,10 +62,11 @@
   </p>
   <p>
     <label for="comments"> Comments: </label>
-    <input id="comments" value="<%= @match.comments %>" type="text" name="comments"/>
+    <textarea id="comments" value="<%= @match.comments %>" name="comments"></textarea>
   </p>
 
   <p>
+    <label>&nbsp;</label>
     <input type="submit" value="Update Match"/>
   </p>
 

@@ -23,15 +23,15 @@ class Competition
     @id = result[0]['id'].to_i
   end
 
-  def update()
-    sql = "UPDATE competitions SET name = $1 WHERE id = $2;"
-    SqlRunner.run(sql, [@name, @id])
-  end
-
-  def delete()
-    sql = "DELETE FROM competitions WHERE id = $1;"
-    SqlRunner.run(sql, [@id])
-  end
+  # def update()
+  #   sql = "UPDATE competitions SET name = $1 WHERE id = $2;"
+  #   SqlRunner.run(sql, [@name, @id])
+  # end
+  #
+  # def delete()
+  #   sql = "DELETE FROM competitions WHERE id = $1;"
+  #   SqlRunner.run(sql, [@id])
+  # end
 
   def Competition.all()
     sql = "SELECT * FROM competitions ORDER BY name;"

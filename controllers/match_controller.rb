@@ -18,6 +18,7 @@ get '/matches/new' do
 end
 
 get '/matches/sort/date' do
+  # @matches = Match.sort_by('date')
   @matches = Match.sort_by_date()
   erb(:"matches/index")
 end

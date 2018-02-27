@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('../models/match.rb')
 
 class Team
 
@@ -33,6 +34,12 @@ class Team
     SqlRunner.run(sql, [@id])
   end
 
+  def matches()
+    sql = "SELECT * FROM matches WHERE home_team_id = $1 OR away_team_id = $1"
+    result = SqlRunner.run(sql, [@id])
+    return result.map{|team| Team.new(team)}
+  end
+
   def Team.all()
     sql = "SELECT * FROM teams ORDER BY name;"
     result = SqlRunner.run(sql)
@@ -42,6 +49,12 @@ class Team
   def Team.delete_all()
     sql = "DELETE FROM teams;"
     SqlRunner.run(sql)
+  end
+
+  def Team.find(team_id)
+    sql = "SELECT * FROM teams WHERE id = $1;"
+    result = SqlRunner.run(sql, [team_id])
+    return Team.new(result[0])
   end
 
 end

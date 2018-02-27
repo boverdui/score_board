@@ -1,0 +1,19 @@
+<div class="main_table">
+  <table>
+    <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.name %></td>
+      <td class="button_field">
+        <form method="get" action="/teams/<%= team.id %>/edit">
+        <input class="small_button" type="submit" value="Update"/>
+        </form>
+      </td>
+      <td class="button_field">
+        <form method="post" action="/teams/<%= team.id %>/delete">
+        <input class="small_button" type="submit" value="Delete" <%= "disabled" if team.matches.length != 0 %>/>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

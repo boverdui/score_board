@@ -96,7 +96,7 @@ class Match
   end
 
   def Match.all()
-    sql = "SELECT * FROM matches;"
+    sql = "SELECT * FROM matches ORDER BY date;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
@@ -161,6 +161,23 @@ class Match
     ORDER BY c.name, m.date;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
+  end
+
+  def Match.search(search_term)
+    search_term.downcase!
+    search_results = []
+    Match.all.each do |match|
+      if (match.date.include?search_term) ||
+         (match.venue.name.downcase.include?search_term) ||
+         (match.competition.name.downcase.include?search_term) ||
+         (match.home_team.name.downcase.include?search_term) ||
+         (match.home_team_score.to_s.include?search_term) ||
+         (match.away_team_score.to_s.include?search_term) ||
+         (match.away_team.name.downcase.include?search_term)
+         search_results << match
+      end
+    end
+    return search_results
   end
 
 end

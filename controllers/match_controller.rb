@@ -47,6 +47,11 @@ get '/matches/sort/competition' do
   erb(:"matches/index")
 end
 
+get '/matches/search' do
+  @matches = Match.search(params[:search_term])
+  erb(:"matches/index")
+end
+
 get '/matches/:id' do
   @match = Match.find(params[:id].to_i)
   erb(:"matches/show")

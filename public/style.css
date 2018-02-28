@@ -35,7 +35,7 @@ label, .show_title {
   font-weight: bold;
   padding-left: 28px;
   padding-right: 10px;
-  text-align: right;
+  text-align: left;
   width: 150px;
 }
 
@@ -112,6 +112,7 @@ th, td {
 }
 
 .main {
+  padding-left: 11px;
   padding-top: 10px;
 }
 

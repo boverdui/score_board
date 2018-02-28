@@ -22,11 +22,6 @@ get '/matches/sort/date' do
   erb(:"matches/index")
 end
 
-# get '/matches/sort/venue' do
-#   @matches = Match.sort_by('venue')
-#   erb(:"matches/index")
-# end
-
 get '/matches/sort/venue' do
   @matches = Match.sort_by_venue()
   erb(:"matches/index")

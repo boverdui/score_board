@@ -96,7 +96,7 @@ class Match
   end
 
   def Match.all()
-    sql = "SELECT * FROM matches ORDER BY date;"
+    sql = "SELECT * FROM matches ORDER BY date DESC;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
@@ -118,20 +118,11 @@ class Match
     return result.map{|match| Match.new(match)}
   end
 
-  # def Match.sort_by(column_name)
-  #   sql = "SELECT m.* FROM matches m
-  #   INNER JOIN venues v
-  #   ON m.venue_id = v.id
-  #   ORDER BY #{column_name}.name;"
-  #   result = SqlRunner.run(sql)
-  #   return result.map{|match| Match.new(match)}
-  # end
-
   def Match.sort_by_venue()
     sql = "SELECT m.* FROM matches m
     INNER JOIN venues v
     ON m.venue_id = v.id
-    ORDER BY v.name, m.date"
+    ORDER BY v.name, m.date DESC"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
@@ -140,7 +131,7 @@ class Match
     sql = "SELECT m.* FROM matches m
     INNER JOIN teams t
     ON m.home_team_id = t.id
-    ORDER BY t.name, m.date;"
+    ORDER BY t.name, m.date DESC;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
@@ -149,7 +140,7 @@ class Match
     sql = "SELECT m.* FROM matches m
     INNER JOIN teams t
     ON m.away_team_id = t.id
-    ORDER BY t.name, m.date;"
+    ORDER BY t.name, m.date DESC;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end
@@ -158,7 +149,7 @@ class Match
     sql = "SELECT m.* FROM matches m
     INNER JOIN competitions c
     ON m.competition_id = c.id
-    ORDER BY c.name, m.date;"
+    ORDER BY c.name, m.date DESC;"
     result = SqlRunner.run(sql)
     return result.map{|match| Match.new(match)}
   end

@@ -1,5 +1,5 @@
 <div class="legend">
-  <table>
+  <table class="table_no_border">
     <tr>
       <td class="legend_title">Legend: </td>
       <td class="win">win</td>
@@ -8,11 +8,6 @@
     </tr>
   </table>
 </div>
-<div>
-  <form method="get" action="/matches/search">
-  <input id="search-term" type="text" name="search_term" placeholder="Filter..."/>
-  </form>
-</div>
 <div class="main_table">
   <table>
     <tr>
@@ -20,8 +15,14 @@
       <th><a href="/matches/sort/venue">Venue <img class="sorting_icon" src="/images/arrow.png"</th>
       <th><a href="/matches/sort/competition">Competition <img class="sorting_icon" src="/images/arrow.png"</th>
       <th><a href="/matches/sort/home_team">Home team <img class="sorting_icon" src="/images/arrow.png"</th>
-      <th colspan = 2>Score</th>
+      <th colspan="2" class="score">Score</th>
       <th><a href="/matches/sort/away_team">Away team <img class="sorting_icon" src="/images/arrow.png"</th>
+      <th colspan="3" class="search_box">
+          <form method="get" action="/matches/search">
+          <input id="search-term" type="text" name="search_term" placeholder="Filter..."/>
+          <input type="image" class="search_icon" src="/images/magnifying_glass.png">
+          </form>
+      </th>
     </tr>
     <% @matches.each do |match| %>
     <tr>

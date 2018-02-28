@@ -1,10 +1,9 @@
 <div class="legend">
   <table class="table_no_border">
     <tr>
-      <td class="legend_title">Legend: </td>
-      <td class="win">win</td>
-      <td class="loss">loss</td>
-      <td class="draw">draw</td>
+      <td class="win_legend">win</td>
+      <td class="loss_legend">loss</td>
+      <td class="draw_legend">draw</td>
     </tr>
   </table>
 </div>
@@ -12,16 +11,16 @@
   <table>
     <tr>
       <th><a href="/matches/sort/date">Date <img class="sorting_icon" src="/images/arrow.png"></a></th>
-      <th><a href="/matches/sort/venue">Venue <img class="sorting_icon" src="/images/arrow.png"</th>
-      <th><a href="/matches/sort/competition">Competition <img class="sorting_icon" src="/images/arrow.png"</th>
-      <th><a href="/matches/sort/home_team">Home team <img class="sorting_icon" src="/images/arrow.png"</th>
+      <th><a href="/matches/sort/venue">Venue <img class="sorting_icon" src="/images/arrow.png"></a></th>
+      <th><a href="/matches/sort/competition">Competition <img class="sorting_icon" src="/images/arrow.png"></a></th>
+      <th><a href="/matches/sort/home_team">Home team <img class="sorting_icon" src="/images/arrow.png"></a></th>
       <th colspan="2" class="score">Score</th>
-      <th><a href="/matches/sort/away_team">Away team <img class="sorting_icon" src="/images/arrow.png"</th>
+      <th><a href="/matches/sort/away_team">Away team <img class="sorting_icon" src="/images/arrow.png"></a></th>
       <th colspan="3" class="search_box">
-          <form method="get" action="/matches/search">
+        <form method="get" action="/matches/search">
           <input id="search-term" type="text" name="search_term" placeholder="Filter..."/>
           <input type="image" class="search_icon" src="/images/magnifying_glass.png">
-          </form>
+        </form>
       </th>
     </tr>
     <% @matches.each do |match| %>
@@ -43,17 +42,17 @@
       <td><%= match.away_team.name %></td>
       <td class="button_field">
         <form method="get" action="/matches/<%= match.id %>">
-        <input class="small_button" type="submit" value="Details"/>
+          <input class="small_button" type="submit" value="Details"/>
         </form>
       </td>
       <td class="button_field">
         <form method="get" action="/matches/<%= match.id %>/edit">
-        <input class="small_button" type="submit" value="Update"/>
+          <input class="small_button" type="submit" value="Update"/>
         </form>
       </td>
       <td class="button_field">
         <form method="post" action="/matches/<%= match.id %>/delete">
-        <input class="small_button" type="submit" value="Delete"/>
+          <input class="small_button" type="submit" value="Delete"/>
         </form>
       </td>
     </tr>

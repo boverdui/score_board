@@ -11,7 +11,7 @@ class Team
   end
 
   def save()
-    @name = @name.gsub(/[A-Za-z]+/,&:capitalize)
+    @name = @name.gsub(/[A-Za-z]+/,&:capitalize).gsub(/Of/,&:downcase)
     sql = "INSERT INTO teams
       (
         name
@@ -59,7 +59,7 @@ class Team
   end
 
   def Team.exists?(name)
-    name = name.gsub(/[A-Za-z]+/,&:capitalize)
+    name = name.gsub(/[A-Za-z]+/,&:capitalize).gsub(/Of/,&:downcase)
     sql = "SELECT * FROM teams WHERE name = $1;"
     result = SqlRunner.run(sql, [name])
     return result.any?

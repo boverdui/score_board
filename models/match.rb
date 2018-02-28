@@ -158,7 +158,8 @@ class Match
     search_term.downcase!
     search_results = []
     Match.all.each do |match|
-      if (match.date.include?search_term) ||
+      if
+         (match.date.include?search_term) ||
          (match.venue.name.downcase.include?search_term) ||
          (match.competition.name.downcase.include?search_term) ||
          (match.home_team.name.downcase.include?search_term) ||

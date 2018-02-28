@@ -1,12 +1,12 @@
-<form method="post" action="/teams/<%= @team.id %>">
-
-  <p>
-    <label for="name"> Name: </label>
-    <input id="name" value="<%= @team.name %>" type="text" name="name"/>
-  </p>
-  <p>
-    <label>&nbsp;</label>
-    <input type="submit" value="Update Team"/>
-  </p>
-
-</form>
+<div class="main">
+  <form method="post" action="/teams/<%= @team.id %>">
+    <p>
+      <label class="left" for="name">Name:</label>
+      <input id="name" value="<%= @team.name %>" type="text" name="name"/>
+    </p>
+    <p>
+      <label class="left" >&nbsp;</label>
+      <input type="submit" value="Update Team"/>
+    </p>
+  </form>
+</div>

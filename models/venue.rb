@@ -27,26 +27,6 @@ class Venue
     @id = result[0]['id'].to_i
   end
 
-  # def update()
-  #   sql = "UPDATE venues
-  #     SET
-  #     (
-  #       name,
-  #       city,
-  #       country
-  #     ) =
-  #     (
-  #       $1, $2, $3
-  #     )
-  #     WHERE id = $4;"
-  #   SqlRunner.run(sql, [@name, @city, @country, @id])
-  # end
-  #
-  # def delete()
-  #   sql = "DELETE FROM venues WHERE id = $1;"
-  #   SqlRunner.run(sql, [@id])
-  # end
-  
   def Venue.all()
     sql = "SELECT * FROM venues ORDER BY name;"
     result = SqlRunner.run(sql)

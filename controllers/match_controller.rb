@@ -69,7 +69,7 @@ end
 post '/matches/:id' do
   @match = Match.new(params)
   @match.update()
-  redirect to '/matches'
+  redirect to "/matches/#{params[:id]}"
 end
 
 post '/matches/:id/delete' do

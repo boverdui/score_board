@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('../models/match.rb')
+require_relative('../models/string.rb')
 
 class Team
 
@@ -11,7 +12,7 @@ class Team
   end
 
   def save()
-    @name = @name.gsub(/[A-Za-z]+/,&:capitalize).gsub(/Of/,&:downcase)
+    @name = @name.sanitize()
     sql = "INSERT INTO teams
       (
         name
@@ -26,6 +27,7 @@ class Team
   end
 
   def update()
+    @name = @name.sanitize()
     sql = "UPDATE teams SET name = $1 WHERE id = $2;"
     SqlRunner.run(sql, [@name, @id])
   end
@@ -59,7 +61,8 @@ class Team
   end
 
   def Team.exists?(name)
-    name = name.gsub(/[A-Za-z]+/,&:capitalize).gsub(/Of/,&:downcase)
+    name = name.sanitize()
+    # name = name.gsub(/[A-Za-z]+/,&:capitalize).gsub(/\sOf\s/,&:downcase)
     sql = "SELECT * FROM teams WHERE name = $1;"
     result = SqlRunner.run(sql, [name])
     return result.any?

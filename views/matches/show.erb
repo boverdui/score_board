@@ -31,4 +31,15 @@
     <div class="show_title">Comments:</div>
     <div class="show_value"><%= @match.comments %></div>
   </p>
+  <p>
+    <div class="show_title">&nbsp;</div>
+    <div class="show_value">
+      <form class="inline" method="get" action="/matches/<%= @match.id %>/edit">
+        <input class="small_button" type="submit" value="Update"/>
+      </form>
+      <form class="inline" method="post" action="/matches/<%= @match.id %>/delete">
+        <input class="small_button" type="submit" value="Delete"/>
+      </form>
+    </div>
+  </p>
 </div>

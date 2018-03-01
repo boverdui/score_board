@@ -97,6 +97,11 @@ th, td {
   padding: 10px 0px 0px 39px;
 }
 
+.inline {
+   display:inline-block;
+   margin-right:5px;
+}
+
 .legend, .main_table {
   padding: 20px 0px 0px 40px;
 }

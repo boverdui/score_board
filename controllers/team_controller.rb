@@ -23,6 +23,7 @@ end
 
 post '/teams' do
   if Team.exists?(params[:name])
+    @team_name = params[:name]
     erb(:"teams/create_error")
   else
     @team = Team.new(params)

@@ -97,8 +97,8 @@ th, td {
   padding: 10px 0px 0px 39px;
 }
 
-.legend {
-  padding: 20px 0px 0px 30px;
+.legend, .main_table {
+  padding: 20px 0px 0px 40px;
 }
 
 .loss {
@@ -114,10 +114,6 @@ th, td {
 .main {
   padding-left: 11px;
   padding-top: 10px;
-}
-
-.main_table {
-  padding: 20px 0px 0px 30px;
 }
 
 .navigation {
@@ -144,10 +140,6 @@ th, td {
 
 .navigation a:hover {
   border-bottom: 5px solid red;
-}
-
-.score {
-  text-align: center;
 }
 
 .search_box {

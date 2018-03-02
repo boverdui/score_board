@@ -31,6 +31,7 @@ input[type="submit"].small_button {
 }
 
 label, .show_title {
+  display: block;
   float: left;
   font-weight: bold;
   padding-left: 28px;
@@ -158,6 +159,10 @@ th, td {
   right: 20px;
   top: 2px;
   width: 15px;
+}
+
+.show_value {
+  display:flex;
 }
 
 .sorting_icon {

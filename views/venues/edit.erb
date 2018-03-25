@@ -1,0 +1,23 @@
+<div class="main">
+  <fieldset>
+  <legend>Edit a venue:</legend>
+  <form method="post" action="/venues/<%= @venue.id %>">
+    <p>
+      <label class="left" for="name">Name:</label>
+      <input id="name" value="<%= @venue.name %>" type="text" name="name"/>
+    </p>
+    <p>
+      <label class="left" for="city">City:</label>
+      <input id="city" value="<%= @venue.city %>" type="text" name="city"/>
+    </p>
+    <p>
+      <label class="left" for="country">Country:</label>
+      <input id="country" value="<%= @venue.country %>" type="text" name="country"/>
+    </p>
+    <p>
+      <label class="left" >&nbsp;</label>
+      <input type="submit" value="Save"/>
+    </p>
+  </form>
+  </fieldset>
+</div>

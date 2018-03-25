@@ -1,5 +1,7 @@
 <div class="main">
   <form method="post" action="/matches">
+    <fieldset>
+    <legend>Add a new match:</legend>
     <p>
       <label for="date">Date:</label>
       <input id="date" type="date" name="date"/>
@@ -50,7 +52,9 @@
     </p>
     <p>
       <label>&nbsp;</label>
-      <input type="submit" value="Add Match"/>
+      <!-- <input type="submit" value="Save"/> -->
+      <button type="submit"><i class="fa fa-save"></i></button>
     </p>
+    </fieldset>
   </form>
 </div>

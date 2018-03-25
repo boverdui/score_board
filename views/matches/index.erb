@@ -10,15 +10,20 @@
 <div class="main_table">
   <table>
     <tr>
-      <th><a href="/matches/sort/date">Date <img class="sorting_icon" src="/images/arrow.png"></a></th>
-      <th><a href="/matches/sort/venue">Venue <img class="sorting_icon" src="/images/arrow.png"></a></th>
-      <th><a href="/matches/sort/competition">Competition <img class="sorting_icon" src="/images/arrow.png"></a></th>
-      <th><a href="/matches/sort/home_team">Home team <img class="sorting_icon" src="/images/arrow.png"></a></th>
+      <th>Date <a href="/matches/sort/date/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
+      <a href="/matches/sort/date/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
+      <th>Venue <a href="/matches/sort/venue/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
+      <a href="/matches/sort/venue/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
+      <th>Competition <a href="/matches/sort/competition/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
+      <a href="/matches/sort/competition/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
+      <th>Home team <a href="/matches/sort/home_team/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
+      <a href="/matches/sort/home_team/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
       <th colspan="2"></th>
-      <th><a href="/matches/sort/away_team">Away team <img class="sorting_icon" src="/images/arrow.png"></a></th>
-      <th colspan="3" class="search_box">
+      <th>Away team <a href="/matches/sort/away_team/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
+      <a href="/matches/sort/away_team/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
+      <th colspan="3" class="search">
         <form method="get" action="/matches/search">
-          <input id="search-term" type="text" name="search_term" placeholder="Filter..."/>
+          <input class="search_box" id="search-term" type="text" name="search_term" placeholder="Filter..."/>
           <input type="image" class="search_icon" src="/images/magnifying_glass.png">
         </form>
       </th>
@@ -42,17 +47,20 @@
       <td><%= match.away_team.name %></td>
       <td class="button_field">
         <form method="get" action="/matches/<%= match.id %>">
-          <input class="small_button" type="submit" value="Details"/>
+          <!-- <input class="small_button" type="submit" value="Details"/> -->
+          <button type="submit"><i class="fa fa-list-alt"></i></button>
         </form>
       </td>
       <td class="button_field">
         <form method="get" action="/matches/<%= match.id %>/edit">
-          <input class="small_button" type="submit" value="Update"/>
+          <!-- <input class="small_button" type="submit" value="Edit"/> -->
+          <button type="submit"><i class="fa fa-edit"></i></button>
         </form>
       </td>
       <td class="button_field">
         <form method="post" action="/matches/<%= match.id %>/delete">
-          <input class="small_button" type="submit" value="Delete"/>
+          <!-- <input class="small_button" type="submit" value="Delete"/> -->
+          <button type="submit"><i class="fa fa-trash-alt"></i></button>
         </form>
       </td>
     </tr>

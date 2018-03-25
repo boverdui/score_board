@@ -27,7 +27,6 @@ class Team
   end
 
   def update()
-    @name = @name.sanitize()
     sql = "UPDATE teams SET name = $1 WHERE id = $2;"
     SqlRunner.run(sql, [@name, @id])
   end

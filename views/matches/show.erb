@@ -1,4 +1,6 @@
 <div class="main">
+  <fieldset>
+  <legend>Match:</legend>
   <p>
     <div class="show_title">Date:</div>
     <%= @match.date %>
@@ -34,10 +36,13 @@
   <p>
     <div class="show_title">&nbsp;</div>
     <form class="inline" method="get" action="/matches/<%= @match.id %>/edit">
-      <input class="small_button" type="submit" value="Update"/>
+      <!-- <input class="small_button" type="submit" value="Edit"/> -->
+      <button type="submit"><i class="fa fa-edit"></i></button>
     </form>
     <form class="inline" method="post" action="/matches/<%= @match.id %>/delete">
-      <input class="small_button" type="submit" value="Delete"/>
+      <!-- <input class="small_button" type="submit" value="Delete"/> -->
+      <button type="submit"><i class="fa fa-trash-alt"></i></button>
     </form>
   </p>
+  </fieldset>
 </div>

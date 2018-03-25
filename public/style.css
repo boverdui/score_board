@@ -6,6 +6,17 @@ a {
 body {
   background-color: #abd2f2;
   font-family: Arial;
+  margin: auto;
+}
+
+button {
+  background-color: #abd2f2;
+  border: none;
+}
+
+fieldset {
+  border-color: #3965ad;
+  border-radius: 5px;
 }
 
 input {
@@ -26,9 +37,9 @@ input[type="submit"]:disabled {
   background-color: lightgray;
 }
 
-input[type="submit"].small_button {
+/* input[type="submit"].small_button {
   width: 70px;
-}
+} */
 
 label, .show_title {
   display: block;
@@ -42,6 +53,10 @@ label, .show_title {
 
 label.left {
   width: 60px;
+}
+
+legend {
+  font-weight: bold;
 }
 
 select {
@@ -66,6 +81,8 @@ textarea {
 
 th {
   background-color: #3965ad;
+  font-size: 16px;
+  height: 28px;
   color: white;
   vertical-align: middle;
 }
@@ -75,9 +92,17 @@ th, td {
   padding: 5px 10px 5px 10px;;
 }
 
+/* tr:nth-child(even) {
+  background-color: #abd2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #6ea0dd;
+} */
+
 .button_field {
   background-color: #abd2f2;
-  border: none;
+  /* border: none; */
   padding-right: 0px;
 }
 
@@ -96,6 +121,15 @@ th, td {
   color: red;
   font-weight: bold;
   padding: 10px 0px 0px 39px;
+}
+
+.fa-edit, .fa-list-alt, .fa-trash-alt, .fa-save {
+  background-color: #abd2f2;
+  font-size: 20px;
+}
+
+.fa-save {
+  padding-left: 172px;
 }
 
 .inline {
@@ -118,8 +152,7 @@ th, td {
 }
 
 .main {
-  padding-left: 11px;
-  padding-top: 10px;
+  padding: 20px 40px 0px 40px;
 }
 
 .navigation {
@@ -148,8 +181,13 @@ th, td {
   border-bottom: 5px solid red;
 }
 
-.search_box {
+.search {
   text-align: right;
+  padding-right: 0px;
+}
+
+.search_box {
+  width: 130px;
 }
 
 .search_icon {
@@ -162,11 +200,12 @@ th, td {
 }
 
 .show_value {
-  display:flex;
+  display: flex;
 }
 
 .sorting_icon {
   width: 15px;
+  vertical-align: bottom;
 }
 
 .table_no_border {

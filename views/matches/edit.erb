@@ -1,5 +1,7 @@
 <div class="main">
   <form method="post" action="/matches/<%= @match.id %>">
+    <fieldset>
+    <legend>Edit match:</legend>
     <p>
       <label for="date"> Date: </label>
       <input id="date" value="<%= @match.date %>" type="date" name="date"/>
@@ -67,7 +69,9 @@
 
     <p>
       <label>&nbsp;</label>
-      <input type="submit" value="Update Match"/>
+      <!-- <input type="submit" value="Save"/> -->
+      <button type="submit"><i class="fa fa-save"></i></button>
     </p>
   </form>
+</fieldset>
 </div>

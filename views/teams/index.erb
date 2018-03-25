@@ -5,12 +5,14 @@
       <td><%= team.name %></td>
       <td class="button_field">
         <form method="get" action="/teams/<%= team.id %>/edit">
-          <input class="small_button" type="submit" value="Update"/>
+          <!-- <input class="small_button" type="submit" value="Edit"/> -->
+          <button type="submit"><i class="fas fa-edit"></i></button>
         </form>
       </td>
       <td class="button_field">
         <form method="post" action="/teams/<%= team.id %>/delete">
-          <input class="small_button" type="submit" value="Delete" <%= "disabled" if team.matches.length != 0 %>/>
+          <!-- <input class="small_button" type="submit" value="Delete" <%= "disabled" if team.matches.length != 0 %>/> -->
+          <button type="submit" <%= "disabled" if team.matches.length != 0 %>><i class="fas fa-trash-alt"></i></button>
         </form>
       </td>
     </tr>

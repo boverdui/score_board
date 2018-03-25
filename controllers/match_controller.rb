@@ -17,28 +17,53 @@ get '/matches/new' do
   erb(:"matches/new")
 end
 
-get '/matches/sort/date' do
-  @matches = Match.sort_by_date()
+get '/matches/sort/date/asc' do
+  @matches = Match.sort_by_date_asc()
   erb(:"matches/index")
 end
 
-get '/matches/sort/venue' do
-  @matches = Match.sort_by_venue()
+get '/matches/sort/date/desc' do
+  @matches = Match.sort_by_date_desc()
   erb(:"matches/index")
 end
 
-get '/matches/sort/home_team' do
-  @matches = Match.sort_by_home_team()
+get '/matches/sort/venue/asc' do
+  @matches = Match.sort_by_venue_asc()
   erb(:"matches/index")
 end
 
-get '/matches/sort/away_team' do
-  @matches = Match.sort_by_away_team()
+get '/matches/sort/venue/desc' do
+  @matches = Match.sort_by_venue_desc()
   erb(:"matches/index")
 end
 
-get '/matches/sort/competition' do
-  @matches = Match.sort_by_competition()
+get '/matches/sort/home_team/asc' do
+  @matches = Match.sort_by_home_team_asc()
+  erb(:"matches/index")
+end
+
+get '/matches/sort/home_team/desc' do
+  @matches = Match.sort_by_home_team_desc()
+  erb(:"matches/index")
+end
+
+get '/matches/sort/away_team/asc' do
+  @matches = Match.sort_by_away_team_asc()
+  erb(:"matches/index")
+end
+
+get '/matches/sort/away_team/desc' do
+  @matches = Match.sort_by_away_team_desc()
+  erb(:"matches/index")
+end
+
+get '/matches/sort/competition/asc' do
+  @matches = Match.sort_by_competition_asc()
+  erb(:"matches/index")
+end
+
+get '/matches/sort/competition/desc' do
+  @matches = Match.sort_by_competition_desc()
   erb(:"matches/index")
 end
 
@@ -63,7 +88,7 @@ end
 post '/matches' do
   @match = Match.new(params)
   @match.save()
-  redirect to '/matches'
+  redirect to "/matches"
 end
 
 post '/matches/:id' do

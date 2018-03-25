@@ -1,0 +1,19 @@
+<div class="main_table">
+  <table>
+    <% @venues.each do |venue| %>
+    <tr>
+      <td><%= venue.name %>, <%= venue.city %>, <%= venue.country %></td>
+      <td class="button_field">
+        <form method="get" action="/venues/<%= venue.id %>/edit">
+          <button type="submit"><i class="fas fa-edit"></i></button>
+        </form>
+      </td>
+      <td class="button_field">
+        <form method="post" action="/venues/<%= venue.id %>/delete">
+          <button type="submit" <%= "disabled" if venue.matches.length != 0 %>><i class="fas fa-trash-alt"></i></button>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

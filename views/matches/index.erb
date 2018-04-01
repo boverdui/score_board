@@ -1,3 +1,12 @@
+<div class ="number_of_results">
+  <td> <%= @matches.size() %> matches</td>
+</div>
+<div class="search">
+  <form method="get" action="/matches/search">
+    <input class="search_box" id="search-term" type="text" name="search_term" placeholder="Filter..."/>
+    <input type="image" class="search_icon" src="/images/magnifying_glass.png">
+  </form>
+</div>
 <div class="legend">
   <table class="table_no_border">
     <tr>
@@ -7,6 +16,7 @@
     </tr>
   </table>
 </div>
+
 <div class="main_table">
   <table>
     <tr>
@@ -21,12 +31,7 @@
       <th colspan="2"></th>
       <th>Away team <a href="/matches/sort/away_team/asc"><img class="sorting_icon" src="/images/arrow_up.png"></a>
       <a href="/matches/sort/away_team/desc"><img class="sorting_icon" src="/images/arrow_down.png"></a></th>
-      <th colspan="3" class="search">
-        <form method="get" action="/matches/search">
-          <input class="search_box" id="search-term" type="text" name="search_term" placeholder="Filter..."/>
-          <input type="image" class="search_icon" src="/images/magnifying_glass.png">
-        </form>
-      </th>
+      <th colspan="3">&nbsp;</th>
     </tr>
     <% @matches.each do |match| %>
     <tr>

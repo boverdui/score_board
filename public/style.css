@@ -20,6 +20,7 @@ fieldset {
 }
 
 input {
+  display: block;
   width: 193px;
 }
 
@@ -37,22 +38,10 @@ input[type="submit"]:disabled {
   background-color: lightgray;
 }
 
-/* input[type="submit"].small_button {
-  width: 70px;
-} */
-
 label, .show_title {
-  display: block;
-  float: left;
   font-weight: bold;
-  padding-left: 28px;
-  padding-right: 10px;
   text-align: left;
   width: 150px;
-}
-
-label.left {
-  width: 60px;
 }
 
 legend {
@@ -60,11 +49,13 @@ legend {
 }
 
 select {
+  display: block;
   width: 198px;
 }
 
 table {
   border-bottom: 3px solid #3965ad;
+  border-top: 3px solid #3965ad;
   border-collapse: collapse;
   font-size: 12px;
   text-align: left;
@@ -75,6 +66,7 @@ td {
 }
 
 textarea {
+  display: block;
   height: 100px;
   width: 193px;
 }
@@ -82,27 +74,17 @@ textarea {
 th {
   background-color: #3965ad;
   font-size: 16px;
-  height: 28px;
   color: white;
   vertical-align: middle;
 }
 
 th, td {
   border-bottom: 1px solid #3965ad;
-  padding: 5px 10px 5px 10px;;
+  padding: 5px 10px 5px 10px;
 }
-
-/* tr:nth-child(even) {
-  background-color: #abd2f2;
-}
-
-tr:nth-child(odd) {
-  background-color: #6ea0dd;
-} */
 
 .button_field {
   background-color: #abd2f2;
-  /* border: none; */
   padding-right: 0px;
 }
 
@@ -128,23 +110,20 @@ tr:nth-child(odd) {
   font-size: 20px;
 }
 
-.fa-save {
-  padding-left: 172px;
-}
-
 .inline {
    display:inline-block;
    margin-right:5px;
 }
 
-.legend, .main_table {
-  padding: 20px 0px 0px 40px;
+.legend {
+  padding: 27px 0px 23px 40px;
 }
 
 .loss {
   background-color: red;
   text-align: center;
 }
+
 .loss_legend {
   background-color: red;
   border: none;
@@ -153,6 +132,10 @@ tr:nth-child(odd) {
 
 .main {
   padding: 20px 40px 0px 40px;
+}
+
+.main_table {
+  padding: 0px 0px 0px 40px;
 }
 
 .navigation {
@@ -181,21 +164,34 @@ tr:nth-child(odd) {
   border-bottom: 5px solid red;
 }
 
+.number_of_results {
+  position: inline-block;
+  float: left;
+  font-size: 12px;
+  padding: 33px 40px 27px 48px;
+}
+
+.other_table {
+  padding: 30px 0px 0px 40px;
+}
+
 .search {
+  position: inline-block;
+  float: left;
   text-align: right;
-  padding-right: 0px;
+  padding: 30px 40px 10px 0px;
 }
 
 .search_box {
-  width: 130px;
+  width: 123px;
 }
 
 .search_icon {
-  float: right;
+  float: left;
   height: 15px;
   position: relative;
-  right: 20px;
-  top: 2px;
+  left: 110px;
+  top: -17px;
   width: 15px;
 }
 

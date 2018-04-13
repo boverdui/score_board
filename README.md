@@ -16,7 +16,7 @@ Instead of choosing one of the four provided project briefs, I chose to build a 
 
 - Create new matches and teams
 - Display a list of all matches
-- Colour team scores accordng to result (win, draw, lose)
+- Colour team scores according to result (win, draw, lose)
 - Full CRUD functionality for matches and teams
 - Sort matches by date, competition, venue, or teams
 

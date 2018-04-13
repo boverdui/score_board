@@ -16,15 +16,15 @@ Instead of choosing one of the four provided project briefs, I chose to build a 
 
 - Create new matches and teams
 - Display a list of all matches
-- Colour team scores according to result (win, draw, lose)
+- Colour team scores according to result (win, loss, draw)
 - Full CRUD functionality for matches and teams
-- Sort matches by date, competition, venue, or teams
+- Sort matches by date, venue, competition, or team
 
 ### Possible Extensions:
 
 - Create new competitions and venues
 - Full CRUD functionality for competitions and venues
-- Filter matches by search term
+- Filter matches by any search term
 
 ### Screen shots of the finished product:
 

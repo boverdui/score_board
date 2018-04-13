@@ -28,7 +28,7 @@ Instead of choosing one of the four provided project briefs, I chose to build a 
 
 ### Screen shots of the finished product:
 
-![Alt text](screenshots/home.png?raw=true)
-![Alt text](screenshots/matches.png?raw=true)
-![Alt text](screenshots/add_match.png?raw=true)
-![Alt text](screenshots/match.png?raw=true)
+![Alt text](screenshots/home.jpg?raw=true)
+![Alt text](screenshots/matches.jpg?raw=true)
+![Alt text](screenshots/add_match.jpg?raw=true)
+![Alt text](screenshots/match.jpg?raw=true)

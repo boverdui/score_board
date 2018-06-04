@@ -26,7 +26,7 @@ Instead of choosing one of the four provided project briefs, I chose to build a 
 - Full CRUD functionality for competitions and venues
 - Filter matches by any search term
 
-### Screenshots of the Finished Product:
+## Screenshots of the finished product:
 
 ![Alt text](screenshots/home.jpg?raw=true)
 ![Alt text](screenshots/matches.jpg?raw=true)
